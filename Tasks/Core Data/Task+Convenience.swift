@@ -26,4 +26,27 @@ extension Task {
         
     }
     
+    
+    //Change Task to TaskRepresentation
+    convenience init(taskRepresentation: TaskRepresentation, managedObjectContext: NSManagedObjectContext = CoreDataStack.shared.mainContext){
+        self.init(name: taskRepresentation.name, notes: taskRepresentation.notes, identifier: taskRepresentation.identifier, priority: taskRepresentation.priority, managedObjectContext: managedObjectContext)
+    }
+    
+    
+    //Change taskRepresentation to Task
+    var taskRepresentation: TaskRepresentation? {
+        
+        guard let name = name,
+            let priorityString = priority,
+        let priority = TaskPriority(rawValue: priorityString) else {
+                return nil
+        }
+        
+        if identifier == nil {
+            identifier = UUID()
+        }
+        
+        return TaskRepresentation(name: name, notes: notes, priority: priority, identifier: identifier!)
+        
+    }
 }
