@@ -18,6 +18,7 @@
 		55F6545A21ED547C00E86C11 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6545921ED547C00E86C11 /* Task+Convenience.swift */; };
 		55F6545F21EE4E3E00E86C11 /* TaskPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6545E21EE4E3E00E86C11 /* TaskPriority.swift */; };
 		EB2254FB21F12BAA00DA0594 /* TaskRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2254FA21F12BAA00DA0594 /* TaskRepresentation.swift */; };
+		EB2254FE21F14CD900DA0594 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2254FD21F14CD900DA0594 /* TaskController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		55F6545E21EE4E3E00E86C11 /* TaskPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPriority.swift; sourceTree = "<group>"; };
 		EB2254F921F1270300DA0594 /* Tasks 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tasks 3.xcdatamodel"; sourceTree = "<group>"; };
 		EB2254FA21F12BAA00DA0594 /* TaskRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepresentation.swift; sourceTree = "<group>"; };
+		EB2254FD21F14CD900DA0594 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		55F6543D21ECFD2100E86C11 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				EB2254FC21F14CBB00DA0594 /* Model Controller */,
 				55F6543E21ECFD2100E86C11 /* AppDelegate.swift */,
 				55F6545C21ED54BD00E86C11 /* Core Data */,
 				55F6545B21ED54B200E86C11 /* View Controllers */,
@@ -98,6 +101,14 @@
 				EB2254FA21F12BAA00DA0594 /* TaskRepresentation.swift */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		EB2254FC21F14CBB00DA0594 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB2254FD21F14CD900DA0594 /* TaskController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 				EB2254FB21F12BAA00DA0594 /* TaskRepresentation.swift in Sources */,
 				55F6545821ED063500E86C11 /* CoreDataStack.swift in Sources */,
 				55F6545621ED02CC00E86C11 /* Tasks.xcdatamodeld in Sources */,
+				EB2254FE21F14CD900DA0594 /* TaskController.swift in Sources */,
 				55F6545A21ED547C00E86C11 /* Task+Convenience.swift in Sources */,
 				55F6545321ECFDCA00E86C11 /* TaskDetailViewController.swift in Sources */,
 				55F6545121ECFDB600E86C11 /* TasksTableViewController.swift in Sources */,
