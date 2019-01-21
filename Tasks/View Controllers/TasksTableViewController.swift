@@ -11,18 +11,24 @@ import CoreData
 
 class TasksTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-var currentPriority: TaskPriority? {
-    didSet {
-        if let priority = currentPriority {
-            let predicate = NSPredicate(format: "priority == %@", priority.rawValue)
-            fetchedResultsController.fetchRequest.predicate = predicate
-        } else {
-            fetchedResultsController.fetchRequest.predicate = nil
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        tableView.reloadData()
+//    }
+    
+    let taskController = TaskController()
+    var currentPriority: TaskPriority? {
+        didSet {
+            if let priority = currentPriority {
+                let predicate = NSPredicate(format: "priority == %@", priority.rawValue)
+                fetchedResultsController.fetchRequest.predicate = predicate
+            } else {
+                fetchedResultsController.fetchRequest.predicate = nil
+            }
+            try! fetchedResultsController.performFetch()
+            tableView.reloadData()
         }
-        try! fetchedResultsController.performFetch()
-        tableView.reloadData()
     }
-}
 
     lazy var fetchedResultsController: NSFetchedResultsController<Task> = {
         let frc = CoreDataStack.shared.makeNewFetchedResultsController()
@@ -64,7 +70,8 @@ var currentPriority: TaskPriority? {
         guard editingStyle == .delete else { return }
         
         let task = fetchedResultsController.object(at: indexPath)
-    
+        taskController.delete(task: task)
+
     }
 
     // MARK: - Navigation
