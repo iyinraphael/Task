@@ -64,14 +64,7 @@ var currentPriority: TaskPriority? {
         guard editingStyle == .delete else { return }
         
         let task = fetchedResultsController.object(at: indexPath)
-        CoreDataStack.shared.mainContext.delete(task)
-        
-        do {
-            try CoreDataStack.shared.mainContext.save()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        } catch {
-            print("Failed to delete task: \(error)")
-        }
+    
     }
 
     // MARK: - Navigation

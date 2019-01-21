@@ -66,13 +66,13 @@ class TaskDetailViewController: UIViewController {
         let priorityIndex = prioritySegmentedControl.selectedSegmentIndex
         editedTask.taskPriority = TaskPriority.allCases[priorityIndex]
         
-        do {
-            try moc.save()
-            // go back to the previous screen
-            navigationController?.popViewController(animated: true)
-        } catch {
-            print("Failed to save: \(error)")
-        }
+        taskController.saveToPersistence()
+        taskController.put(task: editedTask)
+        
+        navigationController?.popViewController(animated: true)
+        
     }
 
+    
+    let taskController = TaskController()
 }
