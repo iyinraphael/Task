@@ -27,13 +27,17 @@ extension Task {
     }
     
     
-    //Change Task to TaskRepresentation
+    //Change TaskRepresentation to a type Task
     convenience init(taskRepresentation: TaskRepresentation, managedObjectContext: NSManagedObjectContext = CoreDataStack.shared.mainContext){
-        self.init(name: taskRepresentation.name, notes: taskRepresentation.notes, identifier: taskRepresentation.identifier, priority: taskRepresentation.priority, managedObjectContext: managedObjectContext)
+        self.init(name: taskRepresentation.name,
+                  notes: taskRepresentation.notes,
+                  identifier: taskRepresentation.identifier,
+                  priority: taskRepresentation.priority,
+                  managedObjectContext: managedObjectContext)
     }
     
     
-    //Change taskRepresentation to Task
+    //Change Task to a TaskREpresentation
     var taskRepresentation: TaskRepresentation? {
         
         guard let name = name,
